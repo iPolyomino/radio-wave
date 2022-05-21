@@ -9,13 +9,21 @@ const Home: NextPage = () => {
   const barCount = 20;
 
   const [heights, setHeights] = useState(new Array(barCount));
-
   useEffect(() => {
-    const newHeight = [...heights].map(() =>
-      Math.floor(Math.random() * maxHeight)
-    );
-    setHeights(newHeight);
+    setHeights([...heights].map(() => Math.floor(Math.random() * maxHeight)));
   }, []);
+
+  const [time, setTime] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime((now) => now + 1);
+      const h = [...heights].map((current) =>
+        Math.floor(current + Math.random() * 20 - 10)
+      );
+      if (!h.includes(NaN)) setHeights(h);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, [heights]);
 
   return (
     <div className={styles.container}>
@@ -26,7 +34,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1>Hello World!</h1>
+        <h1>time : {time}</h1>
         <div className={styles.wavebar}>
           {heights.map((x, index) => {
             return <WaveBar key={index.toString()} height={x} />;

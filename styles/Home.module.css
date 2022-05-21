@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  background-color: #d7dcdc;
 }
 
 .main {
@@ -10,4 +11,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.wavebar {
+  display: flex;
+  max-width: 80vw;
+  height: 80vh;
 }

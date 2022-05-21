@@ -1,0 +1,23 @@
+.container {
+  padding: 0 2rem;
+  background-color: #d7dcdc;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wavebar {
+  display: flex;
+  max-width: 80vw;
+  height: 80vh;
+  gap: 0 1rem;
+}
+
+.wavebar > svg {
+  align-self: flex-end;
+}

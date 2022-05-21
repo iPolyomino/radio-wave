@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import WaveBar from "../components/WaveBar";
 
 const Home: NextPage = () => {
-  const maxHeight = 10;
+  const maxHeight = 1000;
   const barCount = 20;
 
   const [heights, setHeights] = useState(new Array(barCount));

@@ -3,20 +3,15 @@ type Props = {
 };
 
 const WaveBar: React.FC<Props> = ({ height }) => {
-  const size = 50;
+  const width = 100;
+  const baseHight = 5;
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg">
-      {Array.from(Array(height).keys()).map((y) => (
-        <rect
-          key={y}
-          x="0"
-          y={500 - y * size}
-          width={size}
-          height={size}
-          fill="#505050"
-        />
-      ))}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={`0 0 ${width} ${baseHight + height}`}
+    >
+      <rect width={width} height={baseHight + height} fill="#505050" />
     </svg>
   );
 };
